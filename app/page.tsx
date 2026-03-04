@@ -4,8 +4,7 @@ import { FiDownload, FiDatabase, FiBarChart2, FiZap, FiAward } from "react-icons
 import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
-import dynamic from "next/dynamic";
-const MiniLineChart = dynamic(() => import("../components/charts/MiniLineChart"), { ssr: false });
+import ChartClient from "../components/charts/ChartClient";
 
 export default function Page() {
   return (
@@ -50,7 +49,7 @@ export default function Page() {
                   <Badge variant="indigo">Preview</Badge>
                 </div>
                 <div className="mt-3">
-                  <MiniLineChart />
+                  <ChartClient />
                 </div>
               </Card>
               <KPI icon={<FiDatabase />} label="Tools" value="3" hint="SQL • Python • Power BI" />
