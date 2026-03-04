@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #020617;
+  --bg-soft: #0a0f1f;
+  --cyan: #22d3ee;
+  --blue: #38bdf8;
+  --indigo: #6366f1;
+  --purple: #a855f7;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(800px 400px at 10% 0%, rgba(34, 211, 238, 0.08), transparent 65%),
+    radial-gradient(800px 400px at 90% 0%, rgba(168, 85, 247, 0.08), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 0.02 0 0 0 0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  mix-blend-mode: soft-light;
+}
+
+.card {
+  @apply glass rounded-card border border-cyan-400/20 shadow-glow;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.neon-border {
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.25) inset, 0 0 24px rgba(56,189,248,0.15);
+}
+
+.hover-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15);
+}
