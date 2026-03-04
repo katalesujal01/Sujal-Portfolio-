@@ -1,7 +1,16 @@
 "use client";
-import { LineChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip
+} from "recharts";
 
-const data = [
+type Point = { name: string; value: number };
+
+const data: Point[] = [
   { name: "Mon", value: 24 },
   { name: "Tue", value: 30 },
   { name: "Wed", value: 28 },
